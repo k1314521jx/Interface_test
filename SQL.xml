@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<page>
+    <database name="test">
+        <table name="test_select">
+            <sql id="select_member">
+                SELECT * FROM rs_member_wallet_bill WHERE member_id=%s
+            </sql>
+        </table>
+
+        <table name="test_delete">
+            <sql id="delete_user">
+                DELETE FROM rs_member WHERE email=%s
+            </sql>
+        </table>
+    </database>
+</page>
+
+
+
+调用set_xml()
+{'test': {'test_select': {'select_member': 'SELECT * FROM rs_member_wallet_bill
+WHERE member_id=%s'}, 'test_delete': {'delete_user': 'DELETE FROM rs_member WHER
+E email=%s'}}}
+
+调用get_xml_dict('test','test_select','select_member')
+SELECT * FROM rs_member_wallet_bill WHERE member_id=%s
